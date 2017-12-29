@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Rocket : MonoBehaviour
@@ -32,8 +33,21 @@ public class Rocket : MonoBehaviour
             case "Friendly":
                 print("OK");
                 break;
+            case "Finish":
+                print("Hit FInish");
+                Scene scene = SceneManager.GetActiveScene();
+                if (scene.name == "Level 1")
+                { 
+                    SceneManager.LoadScene(1);
+                }
+                else
+                {
+                    SceneManager.LoadScene(0);
+                }
+                break;
             default:
                 print("Dead");
+                SceneManager.LoadScene(0);
                 break;
         }
     }
