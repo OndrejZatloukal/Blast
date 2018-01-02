@@ -88,7 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: 760f4e0da361c444da3b6f97f853fcdd,
+  m_LightingDataAsset: {fileID: 112000002, guid: 969a53b4a529f564f9cd7c4a3a0bb5a3,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -459,11 +459,11 @@ Transform:
   - {fileID: 1436591461}
   - {fileID: 1208386384}
   - {fileID: 1637749555}
-  - {fileID: 2074362829}
   - {fileID: 1198327509}
   - {fileID: 1231615675}
   - {fileID: 676338446}
   - {fileID: 1690385773}
+  - {fileID: 2074362829}
   - {fileID: 1035958017}
   - {fileID: 752293752}
   - {fileID: 985998438}

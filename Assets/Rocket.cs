@@ -21,6 +21,8 @@ public class Rocket : MonoBehaviour
     Rigidbody rigidBody;
     AudioSource audioSource;
 
+    bool collisionsDisabled = false;
+
     enum State { Alive, Dying, Transcending };
     State state = State.Alive;
 
@@ -35,15 +37,32 @@ public class Rocket : MonoBehaviour
 	void Update ()
     {
         if (state == State.Alive)
-        { 
+        {
             RespondToThrustInput();
             RespondToRotateInput();
+        }
+
+        if (Debug.isDebugBuild)
+        { 
+            RespondToDebugKeys();
+        }
+    }
+
+    private void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionsDisabled = !collisionsDisabled;
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (state != State.Alive) { return; }
+        if (state != State.Alive || collisionsDisabled) { return; }
 
         switch (collision.gameObject.tag)
         {
@@ -61,19 +80,11 @@ public class Rocket : MonoBehaviour
 
     private void StartSuccessSequence()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "Level 1")
-        {
             state = State.Transcending;
             audioSource.Stop();
             audioSource.PlayOneShot(success);
             successParticles.Play();
-            Invoke("LoadNextLevel", levelLoadDelay);
-        }
-        else
-        {
-            Invoke("LoadFirstLevel", levelLoadDelay);
-        }
+            Invoke("LoadNextLevel", levelLoadDelay);   
     }
 
     private void StartDeathSequence()
@@ -82,18 +93,26 @@ public class Rocket : MonoBehaviour
         audioSource.Stop();
         audioSource.PlayOneShot(death);
         deathParticles.Play();
-        Invoke("LoadFirstLevel", levelLoadDelay);
+        Invoke("LoadCurrentLevel", levelLoadDelay);
     }
 
-    private void LoadFirstLevel()
+    private void LoadCurrentLevel()
     {
-        SceneManager.LoadScene(0);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex +1;
+
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     private void RespondToThrustInput()
