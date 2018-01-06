@@ -322,6 +322,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db60cd5584166b9408efe93be897b2b0, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &148989247 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4238573230368140, guid: db60cd5584166b9408efe93be897b2b0,
+    type: 2}
+  m_PrefabInternal: {fileID: 148989246}
 --- !u!1001 &151253226
 Prefab:
   m_ObjectHideFlags: 0
@@ -964,6 +969,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0.26
       objectReference: {fileID: 0}
+    - target: {fileID: 114271994822703196, guid: 9dd1e3d3adec0ff458dd1c06179fabbc,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 148989247}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9dd1e3d3adec0ff458dd1c06179fabbc, type: 2}
   m_IsPrefabParent: 0

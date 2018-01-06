@@ -205,6 +205,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementVector: {x: 13, y: 0, z: 0}
   period: 2
+--- !u!4 &40353214 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4238573230368140, guid: db60cd5584166b9408efe93be897b2b0,
+    type: 2}
+  m_PrefabInternal: {fileID: 148989246}
 --- !u!1001 &84563412
 Prefab:
   m_ObjectHideFlags: 0
@@ -837,15 +842,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4601110881098904, guid: 9dd1e3d3adec0ff458dd1c06179fabbc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.7
+      value: -37
       objectReference: {fileID: 0}
     - target: {fileID: 4601110881098904, guid: 9dd1e3d3adec0ff458dd1c06179fabbc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 26
+      value: 24.4
       objectReference: {fileID: 0}
     - target: {fileID: 4601110881098904, guid: 9dd1e3d3adec0ff458dd1c06179fabbc, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -36
+      value: -26.2
       objectReference: {fileID: 0}
     - target: {fileID: 4601110881098904, guid: 9dd1e3d3adec0ff458dd1c06179fabbc, type: 2}
       propertyPath: m_LocalRotation.x
@@ -867,14 +872,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4601110881098904, guid: 9dd1e3d3adec0ff458dd1c06179fabbc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 14.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4601110881098904, guid: 9dd1e3d3adec0ff458dd1c06179fabbc, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.26
-      objectReference: {fileID: 0}
+    - target: {fileID: 114271994822703196, guid: 9dd1e3d3adec0ff458dd1c06179fabbc,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 40353214}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9dd1e3d3adec0ff458dd1c06179fabbc, type: 2}
   m_IsPrefabParent: 0
